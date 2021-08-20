@@ -1,0 +1,4 @@
+[debug] [satracer-test] Classpath dependencies List()
+[debug] [satracer-test] Dependencies from configurations List(satracer)
+[debug] Bloop wrote the configuration of project 'satracer-test' to '/home/mami/mseminar/SATracer/.bloop/satracer-test.json'
+[success] Generated .bloop/satracer-test.json

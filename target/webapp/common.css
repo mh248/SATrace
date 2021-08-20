@@ -1,0 +1,25 @@
+body {
+    width: 75%;
+    margin: auto;
+}
+
+button {
+    margin: 1ex;
+}
+
+select {
+    margin: 1ex;
+}
+
+#trace {
+    display: none;
+}
+
+#message {
+    margin: 2em;
+}
+
+#output {
+    margin: 2em;
+}
+

@@ -1,0 +1,13 @@
+<web-app>
+
+  <servlet>
+    <servlet-name>Web API</servlet-name>
+    <servlet-class>web.API</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Web API</servlet-name>
+    <url-pattern>/api</url-pattern>
+  </servlet-mapping>
+
+</web-app>

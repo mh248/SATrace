@@ -1,0 +1,336 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "satracer-test",
+        "directory": "/home/mami/mseminar/SATracer",
+        "workspaceDir": "/home/mami/mseminar/SATracer",
+        "sources": [
+            "/home/mami/mseminar/SATracer/src/test/scala",
+            "/home/mami/mseminar/SATracer/src/test/scala-2.12",
+            "/home/mami/mseminar/SATracer/src/test/scala-2",
+            "/home/mami/mseminar/SATracer/src/test/java",
+            "/home/mami/mseminar/SATracer/target/scala-2.12/src_managed/test"
+        ],
+        "dependencies": [
+            "satracer"
+        ],
+        "classpath": [
+            "/home/mami/mseminar/SATracer/.bloop/satracer/scala-2.12/classes",
+            "/home/mami/mseminar/SATracer/lib/org.sat4j.core.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-jackson_2.12/4.0.0/json4s-jackson_2.12-4.0.0.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-core_2.12/4.0.0/json4s-core_2.12-4.0.0.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-jackson-core_2.12/4.0.0/json4s-jackson-core_2.12-4.0.0.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-ast_2.12/4.0.0/json4s-ast_2.12-4.0.0.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-scalap_2.12/4.0.0/json4s-scalap_2.12-4.0.0.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar",
+            "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar"
+        ],
+        "out": "/home/mami/mseminar/SATracer/.bloop/satracer",
+        "classesDir": "/home/mami/mseminar/SATracer/.bloop/satracer/scala-2.12/test-classes",
+        "resources": [
+            "/home/mami/mseminar/SATracer/src/test/resources",
+            "/home/mami/mseminar/SATracer/target/scala-2.12/resource_managed/test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.14",
+            "options": [
+                
+            ],
+            "jars": [
+                "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14.jar",
+                "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.14/scala-compiler-2.12.14.jar",
+                "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.14/scala-reflect-2.12.14.jar",
+                "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar",
+                "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar",
+                "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.jar"
+            ],
+            "analysis": "/home/mami/mseminar/SATracer/target/streams/test/bloopAnalysisOut/_global/streams/inc_compile_2.12.zip",
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/usr/lib/jvm/java-11-openjdk-amd64",
+                "options": [
+                    "-Duser.dir=/home/mami/mseminar/SATracer"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.14",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.json4s",
+                    "name": "json4s-jackson_2.12",
+                    "version": "4.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "json4s-jackson_2.12",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-jackson_2.12/4.0.0/json4s-jackson_2.12-4.0.0.jar"
+                        },
+                        {
+                            "name": "json4s-jackson_2.12",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-jackson_2.12/4.0.0/json4s-jackson_2.12-4.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.json4s",
+                    "name": "json4s-core_2.12",
+                    "version": "4.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "json4s-core_2.12",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-core_2.12/4.0.0/json4s-core_2.12-4.0.0.jar"
+                        },
+                        {
+                            "name": "json4s-core_2.12",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-core_2.12/4.0.0/json4s-core_2.12-4.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.json4s",
+                    "name": "json4s-jackson-core_2.12",
+                    "version": "4.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "json4s-jackson-core_2.12",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-jackson-core_2.12/4.0.0/json4s-jackson-core_2.12-4.0.0.jar"
+                        },
+                        {
+                            "name": "json4s-jackson-core_2.12",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-jackson-core_2.12/4.0.0/json4s-jackson-core_2.12-4.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.json4s",
+                    "name": "json4s-ast_2.12",
+                    "version": "4.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "json4s-ast_2.12",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-ast_2.12/4.0.0/json4s-ast_2.12-4.0.0.jar"
+                        },
+                        {
+                            "name": "json4s-ast_2.12",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-ast_2.12/4.0.0/json4s-ast_2.12-4.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.json4s",
+                    "name": "json4s-scalap_2.12",
+                    "version": "4.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "json4s-scalap_2.12",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-scalap_2.12/4.0.0/json4s-scalap_2.12-4.0.0.jar"
+                        },
+                        {
+                            "name": "json4s-scalap_2.12",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-scalap_2.12/4.0.0/json4s-scalap_2.12-4.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.thoughtworks.paranamer",
+                    "name": "paranamer",
+                    "version": "2.8",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "paranamer",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar"
+                        },
+                        {
+                            "name": "paranamer",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fasterxml.jackson.core",
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jackson-databind",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar"
+                        },
+                        {
+                            "name": "jackson-databind",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fasterxml.jackson.core",
+                    "name": "jackson-annotations",
+                    "version": "2.12.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jackson-annotations",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar"
+                        },
+                        {
+                            "name": "jackson-annotations",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fasterxml.jackson.core",
+                    "name": "jackson-core",
+                    "version": "2.12.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jackson-core",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar"
+                        },
+                        {
+                            "name": "jackson-core",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "javax.servlet",
+                    "name": "javax.servlet-api",
+                    "version": "3.0.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "javax.servlet-api",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar"
+                        },
+                        {
+                            "name": "javax.servlet-api",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.14",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0m/home/mami/mseminar/sat4j3/xsbt-sat4j-test2/src/main/scala/Trace.scala:34:53: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Seq[web.TrailDataString][0m
+[0m[[0m[31merror[0m] [0m[0m required: Seq[web.TrailData][0m
+[0m[[0m[31merror[0m] [0m[0m      Map("message" -> message, "graph" -> getGraph(trail))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
