@@ -3,8 +3,8 @@ function cnfUNSAT(n) {
         return [[]];
     let cnf = [];
     for (let clause of cnfUNSAT(n - 1)) {
-        cnf.push(clause.concat(-n));
-        cnf.push(clause.concat(n));
+        cnf.push(clause.concat("-x"+n));
+        cnf.push(clause.concat("x"+n));
     }
     return cnf;
 }
@@ -26,7 +26,7 @@ function cnfWaerden(j, k, n) {
     for (let d = 1; d <= n; d++) {
         for (let i = 1; i <= n; i++) {
             if (i+(j-1)*d <= n) {
-                let clause = range(i, i+(j-1)*d+1, d);
+                let clause = range(i, i+(j-1)*d+1, d).map(i => "x" + i);
                 cnf.push(clause);
             }
         }
@@ -34,7 +34,7 @@ function cnfWaerden(j, k, n) {
     for (let d = 1; d <= n; d++) {
         for (let i = 1; i <= n; i++) {
             if (i+(k-1)*d <= n) {
-                let clause = range(i, i+(k-1)*d+1, d).map(lit => -lit);
+                let clause = range(i, i+(k-1)*d+1, d).map(i => "-x" + i);
                 cnf.push(clause)
             }
         }

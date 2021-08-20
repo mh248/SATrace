@@ -1781,3 +1781,26 @@ insert into indexed_jar (md5) values (?) [23505-200]
 	at java.lang.Thread.run(Thread.java:829)
 [0m
 [0m2021.08.20 17:34:47 INFO  time: indexed workspace in 6.79s[0m
+[0m2021.08.20 17:40:35 INFO  compiling satracer (5 scala sources)[0m
+[0m2021.08.20 17:40:57 INFO  time: compiled satracer in 21s[0m
+8月 20, 2021 5:42:52 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 66
+8月 20, 2021 5:43:26 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 103
+8月 20, 2021 5:43:48 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 130
+8月 20, 2021 5:43:51 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 139
+8月 20, 2021 5:44:04 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 154
+8月 20, 2021 5:44:20 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 171
+8月 20, 2021 5:44:24 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 185
+something's wrong: no file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala in Seq[Int]RangePosition(file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala, 2420, 2420, 2428)
+[0m2021.08.20 17:56:01 INFO  compiling satracer (1 scala source)[0m
+8月 20, 2021 5:56:01 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 260
+[0m2021.08.20 17:56:03 INFO  time: compiled satracer in 2.75s[0m
+8月 20, 2021 8:21:49 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTrace

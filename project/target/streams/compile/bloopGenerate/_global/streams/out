@@ -1,4 +1,4 @@
-[debug] [satracer-build] Classpath dependencies List()
-[debug] [satracer-build] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'satracer-build' to '/home/mami/mseminar/SATracer/project/.bloop/satracer-build.json'
-[success] Generated .bloop/satracer-build.json
+[0m[[0m[0mdebug[0m] [0m[0m[satracer-build] Classpath dependencies List()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[satracer-build] Dependencies from configurations List()[0m
+[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'satracer-build' to '/home/mami/mseminar/SATracer/project/.bloop/satracer-build.json'[0m
+[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop/satracer-build.json[0m

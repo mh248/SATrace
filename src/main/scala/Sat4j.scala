@@ -54,6 +54,11 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
   val bcEncoder = new org.sat4j.tools.encoding.Sequential()
   var trace = new Trace(int2String)
 
+  def convertInt(lit: Int): String = {
+      if (lit < 0) "-" + int2String(lit*(-1))
+      else int2String(lit)
+  }
+
   def addClause(clause: Seq[Int]): Unit = {
     sat4jSolver.addClause(new VecInt(clause.toArray))
   }
