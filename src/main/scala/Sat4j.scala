@@ -59,6 +59,14 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
       else int2String(lit)
   }
 
+  def convertClause(clause: IConstr): Seq[String] = {
+    var convert: Seq[String] = Seq.empty
+    for (i <- 0 to clause.size) {
+      convert = convert :+ convertInt(clause.get(i))
+    }
+    convert
+  }
+
   def addClause(clause: Seq[Int]): Unit = {
     sat4jSolver.addClause(new VecInt(clause.toArray))
   }
@@ -119,7 +127,8 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
     log(s"assuming: $lit")
     val trail = getCurrentTrail()
     val level = if (trail.size == 0) 1 else trail.map(_.level).max + 1
-    trace.addTrace(s"Assume $lit", trail :+ trailData(lit, level, null))
+    val lit2 = convertInt(lit)
+    trace.addTrace(s"Assume $lit2", trail :+ trailData(lit, level, null))
   }
   // Unit propagation
   def propagating(lit: Int, reason: IConstr): Unit = {
@@ -127,8 +136,9 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
   }
   // backtrack on a decision variable
   def backtracking(lit: Int): Unit = {
+    val lit2 = convertInt(lit)
     log(s"backtracking: $lit")
-    trace.addTrace(s"Undo $lit")
+    trace.addTrace(s"Undo $lit2")
   }
   // adding forced variable (conflict driven assignment)
   def adding(lit: Int): Unit = {
@@ -146,13 +156,17 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
         }
       }
     }
+    println(int2String)
     val learn = toDimacs(clause).mkString(" ")
-    trace.addTrace(s"Learn '$learn'")
+    val learn2 = toDimacs(clause).map(t => convertInt(t))
+    
+    trace.addTrace(s"Learn '$learn2'")
   }
   // learn a new unit clause (a literal)
   def learnUnit(lit: Int): Unit = {
     log(s"learnUnit: $lit")
-    trace.addTrace(s"Learn Unit '$lit'")
+    val lit2 = convertInt(lit)
+    trace.addTrace(s"Learn Unit '$lit2'")
   }
   // delete a clause
   def delete(clause: IConstr): Unit = {
@@ -182,7 +196,8 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
   // a conflict has been found while propagating values
   def conflictFound(lit: Int): Unit = {
     log(s"conflictFound: $lit") // ???
-    trace.addTrace(s"Conflict found $lit", getCurrentTrail())
+    val lit2 = convertInt(lit)
+    trace.addTrace(s"Conflict found $lit2", getCurrentTrail())
   }
   // a solution is found
   def solutionFound(model: Array[Int], lazyModel: RandomAccessModel): Unit = {
