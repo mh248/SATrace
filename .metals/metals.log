@@ -1804,3 +1804,186 @@ something's wrong: no file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.s
 [0m2021.08.20 17:56:03 INFO  time: compiled satracer in 2.75s[0m
 8月 20, 2021 8:21:49 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTrace
+[0m2021.08.21 11:05:56 INFO  shutting down Metals[0m
+[0m2021.08.21 11:05:56 INFO  Shut down connection with build server.[0m
+No more data in the client stdin, exiting...
+[0m2021.08.21 11:05:56 INFO  Shut down connection with build server.[0m
+No more data in the client stdin, exiting...
+[0m2021.08.21 11:05:56 INFO  Shut down connection with build server.[0m
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher654708358112643558/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher654708358112643558/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher654708358112643558/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+java.util.concurrent.RejectedExecutionException: Task scala.concurrent.impl.CallbackRunnable@1a627988 rejected from java.util.concurrent.ThreadPoolExecutor@a464445[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 2345]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2055)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:825)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1355)
+	at scala.concurrent.impl.ExecutionContextImpl$$anon$4.execute(ExecutionContextImpl.scala:138)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:288)
+	at scala.concurrent.Promise.complete(Promise.scala:53)
+	at scala.concurrent.Promise.complete$(Promise.scala:52)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:187)
+	at scala.concurrent.Promise.success(Promise.scala:86)
+	at scala.concurrent.Promise.success$(Promise.scala:86)
+	at scala.concurrent.impl.Promise$DefaultPromise.success(Promise.scala:187)
+	at bloop.launcher.bsp.BspBridge.wireBspConnectionStreams(BspBridge.scala:253)
+	at bloop.launcher.LauncherMain.runLauncher(Launcher.scala:109)
+	at scala.meta.internal.metals.BloopServers$$anon$1.run(BloopServers.scala:159)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[0m2021.08.23 15:25:43 INFO  Started: Metals version 0.10.5 in workspace '/home/mami/mseminar/SATracer' for client Visual Studio Code 1.59.0.[0m
+[0m2021.08.23 15:25:45 INFO  time: initialize in 1.64s[0m
+[0m2021.08.23 15:25:46 INFO  Attempting to connect to the build server...[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher17640851942392809687/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m2021.08.23 15:25:45 WARN  no build target for: /home/mami/mseminar/SATracer/build.sbt[0m
+[0m2021.08.23 15:25:45 WARN  no build target for: /home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala[0m
+[0m2021.08.23 15:25:45 INFO  skipping build import with status 'Installed'[0m
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m2021.08.23 15:25:51 INFO  no build target: using presentation compiler with only scala-library: 2.12.14[0m
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.8-19-4d9f966b...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Loading 2 projects from '/home/mami/mseminar/SATracer/.bloop'...
+[0m[32m[D][0m Loading project from '/home/mami/mseminar/SATracer/.bloop/satracer.json'
+[0m[32m[D][0m Loading project from '/home/mami/mseminar/SATracer/.bloop/satracer-test.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.14.
+[0m[32m[D][0m   => /home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar
+[0m[32m[D][0m   => /home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.jar
+[0m[32m[D][0m   => /home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar
+[0m[32m[D][0m   => /home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.14/scala-compiler-2.12.14.jar
+[0m[32m[D][0m   => /home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14.jar
+[0m[32m[D][0m   => /home/mami/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.14/scala-reflect-2.12.14.jar
+[0m[32m[D][0m Configured SemanticDB in projects 'satracer', 'satracer-test'
+[0m[32m[D][0m Missing analysis file for project 'satracer-test'
+[0m[32m[D][0m Loading previous analysis for 'satracer' from '/home/mami/mseminar/SATracer/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.12.zip'.
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher17640851942392809687/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher17640851942392809687/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.08.23 15:25:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mami/.cache/metals/bsp.trace.json[0m
+[0m2021.08.23 15:25:52 INFO  Attempting to connect to the build server...[0m
+[0m2021.08.23 15:25:52 INFO  Attempting to connect to the build server...[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher492214905047305754/bsp.socket'...
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher2179663096071749365/bsp.socket'...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher492214905047305754/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher492214905047305754/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher2179663096071749365/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher2179663096071749365/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+[0m2021.08.23 15:25:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mami/.cache/metals/bsp.trace.json[0m
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.08.23 15:25:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mami/.cache/metals/bsp.trace.json[0m
+[0m2021.08.23 15:25:53 INFO  time: Connected to build server in 7.17s[0m
+[0m2021.08.23 15:25:53 INFO  Connected to Build server: Bloop v1.4.8-19-4d9f966b[0m
+[0m2021.08.23 15:25:53 INFO  time: Imported build in 0.22s[0m
+[0m2021.08.23 15:25:57 INFO  no build target: using presentation compiler with only scala-library: 2.12.14[0m
+8月 23, 2021 3:25:57 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 32
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 6.67s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 6.95s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 7.5s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 7.56s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 7.59s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 7.52s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 9.96s[0m
+[0m2021.08.23 15:25:59 INFO  time: code lens generation in 12s[0m
+[0m2021.08.23 15:26:00 WARN  Could not find java sources in None. Java symbols will not be available.[0m
+[0m2021.08.23 15:26:00 INFO  time: indexed workspace in 6.83s[0m
+[0m2021.08.23 15:26:01 INFO  compiling satracer (5 scala sources)[0m
+8月 23, 2021 3:26:03 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 57
+8月 23, 2021 3:26:03 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 59
+[0m2021.08.23 15:26:12 INFO  time: compiled satracer in 10s[0m
+8月 23, 2021 3:26:51 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 165
+[0m2021.08.23 15:27:03 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:27:03 INFO  time: compiled satracer in 0.54s[0m
+[0m2021.08.23 15:28:18 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:28:18 INFO  time: compiled satracer in 0.36s[0m
+[0m2021.08.23 15:30:34 INFO  /home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala:63:15: stale bloop error: value foreach is not a member of org.sat4j.specs.IConstr
+    for (c <- clause) convertInt(c)
+              ^^^^^^[0m
+[0m2021.08.23 15:30:34 INFO  /home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala:63:15: stale bloop error: value foreach is not a member of org.sat4j.specs.IConstr
+    for (c <- clause) convertInt(c)
+              ^^^^^^[0m
+[0m2021.08.23 15:31:11 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:31:11 INFO  time: compiled satracer in 0.37s[0m
+[0m2021.08.23 15:31:45 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:31:45 INFO  time: compiled satracer in 0.39s[0m
+8月 23, 2021 3:32:48 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 639
+[0m2021.08.23 15:32:52 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:32:52 INFO  time: compiled satracer in 0.34s[0m
+[0m2021.08.23 15:33:22 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:33:22 INFO  time: compiled satracer in 0.37s[0m
+something's wrong: no file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala in Seq[<error>]RangePosition(file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala, 2217, 2217, 2230)
+something's wrong: no file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala in Seq[<error>]RangePosition(file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala, 2217, 2217, 2223)
+something's wrong: no file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala in Seq[<error>]RangePosition(file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala, 2217, 2217, 2224)
+something's wrong: no file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala in Seq[String]RangePosition(file:///home/mami/mseminar/SATracer/src/main/scala/Sat4j.scala, 2217, 2217, 2228)
+[0m2021.08.23 15:33:38 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:33:38 INFO  time: compiled satracer in 0.29s[0m
+8月 23, 2021 3:33:47 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 758
+[0m2021.08.23 15:34:41 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:34:43 INFO  time: compiled satracer in 1.4s[0m
+[0m2021.08.23 15:37:47 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:37:47 INFO  time: compiled satracer in 0.22s[0m
+[0m2021.08.23 15:37:55 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:37:56 INFO  time: compiled satracer in 1.35s[0m
+[0m2021.08.23 15:38:13 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:38:14 INFO  time: compiled satracer in 1.26s[0m
+[0m2021.08.23 15:38:33 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:38:34 INFO  time: compiled satracer in 1.48s[0m
+[0m2021.08.23 15:40:41 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:40:43 INFO  time: compiled satracer in 2.56s[0m
+[0m2021.08.23 15:41:41 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:41:44 INFO  time: compiled satracer in 2.3s[0m
+[0m2021.08.23 15:42:22 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:42:22 INFO  Deduplicating compilation of satracer from bsp client 'Metals 0.10.5' (since 16m 29.863s)[0m
+[0m2021.08.23 15:42:22 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:42:24 INFO  time: compiled satracer in 1.84s[0m
+[0m2021.08.23 15:43:56 INFO  compiling satracer (1 scala source)[0m
+[0m2021.08.23 15:43:58 INFO  time: compiled satracer in 1.96s[0m
+8月 23, 2021 3:50:55 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTrace
