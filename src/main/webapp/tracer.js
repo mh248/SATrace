@@ -30,6 +30,7 @@ function init() {
     document.getElementById("trace").style.display = "none";
     document.getElementById("status").innerHTML = "";
     document.getElementById("message").innerHTML = "";
+    document.getElementById("learnt").innerHTML = "";
     document.getElementById("graph").innerHTML = "";
     document.getElementById("output").innerHTML = "";
 }
@@ -162,6 +163,12 @@ function showTrace() {
                 var json = JSON.parse(result)
                 traceCache[tracePos] = json.result;
                 document.getElementById("message").innerHTML = json.result.message;
+                if (json.result.message.startsWith("Learn")) {
+                    var learn = document.getElementById("learnt").innerHTML;
+                    learn += "<br />";
+                    learn += json.result.message;
+                    document.getElementById("learnt").innerHTML = learn;
+                }
                 if (json.result.graph) {
                     prevGraph = json.result.graph;
                     graphviz.renderDot(json.result.graph).on("end", () => interactive());

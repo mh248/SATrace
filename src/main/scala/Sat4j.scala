@@ -93,6 +93,7 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
   def trailData(lit: Int, level: Int, reason: IConstr) = {
     val learnt= if (reason == null) false else reason.learnt()
     TrailData(lit, level, toDimacs(reason), learnt)
+
   }
 
   def getCurrentTrail(): Seq[TrailData] = {
@@ -158,8 +159,7 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
     }
     println(int2String)
     val learn = toDimacs(clause).mkString(" ")
-    val learn2 = toDimacs(clause).map(t => convertInt(t))
-    
+    val learn2 = toDimacs(clause).map(t => convertInt(t)).mkString(" ")
     trace.addTrace(s"Learn '$learn2'")
   }
   // learn a new unit clause (a literal)

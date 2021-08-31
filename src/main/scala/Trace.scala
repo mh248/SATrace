@@ -52,13 +52,17 @@ class Trace(int2String: Map[Int, String]) {
     val dg = new Digraph
     for (trail <- trails) {
      // if (trail.level > 0 || trail.learnt) {
-      val tooltip = trail.reason.mkString(" ")
+       if (trail.learnt) dg.addNodeOpt(trail.lit, Map("color" -> "red"))
+      var tooltip = ""
+      if (trail.reason.size > 1) tooltip = trail.reason.mkString(" ")
       dg.addNodeOpt(trail.lit, Map("tooltip" -> tooltip))
       dg.setLevel(trail.lit, trail.level)
       
         if (trail.reason.size > 0) {
           for (from <- trail.reason; if abs(trail.lit) != abs(from)) {
-            dg.addArc(neg(from), trail.lit)
+            
+            if (!trail.learnt) dg.addArc(neg(from), trail.lit)
+            else dg.addArc(neg(from), trail.lit, Map("color" -> "red"))
           }
         }
      // }

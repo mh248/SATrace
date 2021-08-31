@@ -70,14 +70,27 @@ class Handler {
       params.get("i") match {
         case Some(Seq(i)) => {
           val trace: Map[String,String] = sat4j.trace.getTrace(i.toInt)
-          println(trace)
+          println("TRACE:"+trace)
           encodeJson(trace)
         }
         case _ => {
           JNull
         }
       }
-    }
+    }/*
+    case "getLearn" => {
+      params.get("i") match {
+        case Some(Seq(i)) => {
+          val learn: Map[String,String] = sat4j.trace.getLearn
+          println("LEARN:"+learn)
+          encodeJson(learn)
+        }
+        case _ => {
+          JNull
+        }
+      }
+      
+    }*/
     case _ => {
       JNull
     }

@@ -41,7 +41,7 @@ function cnfWaerden(j, k, n) {
     }
     return cnf;
 }
-
+/*
 function cnfPigeonHole(n) {
     function p(i, j) { return  i*n + j + 1; };
     let cnf = [];
@@ -51,6 +51,20 @@ function cnfPigeonHole(n) {
         for (let i = 0; i <= n; i++)
             for (let k = i+1; k <= n; k++)
                 cnf.push([-p(i,j), -p(k,j)]);
+    }
+    return cnf;
+}
+*/
+function cnfPigeonHole(n) {
+    function p(i, j) { return  "p_"+i+"_"+j; };
+    function negp(i, j) {return  "-p_"+i+"_"+j;}
+    let cnf = [];
+    for (let i = 0; i <= n; i++)
+        cnf.push(range(0, n, 1).map(j => p(i,j)));
+    for (let j = 0; j < n; j++) {
+        for (let i = 0; i <= n; i++)
+            for (let k = i+1; k <= n; k++)
+                cnf.push([negp(i,j), negp(k,j)]);
     }
     return cnf;
 }
