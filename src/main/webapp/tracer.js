@@ -144,6 +144,12 @@ function interactive() {
     }
 }
 
+function negneg(lit) {
+    console.log(lit);
+    if (lit.startsWith("-")) return lit.substring(1);
+    else return "-" + lit;
+}
+
 function showTrace() {
     if (tracePos < 0 || traceLength <= tracePos)
         return;
@@ -167,7 +173,13 @@ function showTrace() {
                     var learn = document.getElementById("learnt").innerHTML;
                     learn += "<br />";
                     learn += json.result.message;
-                    document.getElementById("learnt").innerHTML = learn;
+                    document.getElementById("learnt").innerHTML = learn;     
+                    var le = json.result.message.replace(/'/g, "").replace("Learn ", "").split(" ");
+                    console.log(le);            
+                    for (var i=0; i<le.length; i++) {
+                        setFill(negneg(le[i]), "red");
+                        console.log(negneg(le[i]));
+                    }
                 }
                 if (json.result.graph) {
                     prevGraph = json.result.graph;
