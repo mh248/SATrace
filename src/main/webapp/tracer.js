@@ -241,6 +241,9 @@ function selectCNF(sel) {
         case "Sudoku":
             cnf = cnfSudoku();
             break;
+        case "QueenGraph":
+            cnf = cnfQueenGraph(args[1], args[2]);
+            break;
     }
     document.getElementById("clauses").innerHTML =
         cnf.map(c => c.join(" ").trim()).join("\n");

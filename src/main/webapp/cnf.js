@@ -21,6 +21,56 @@ function range(from, to, by) {
     return r;
 }
 
+function cnfQueenGraph(n,d) {
+    function x(i,j,a) { return 'x_' + i + j + '_' + a; };
+    function negx(i,j,a) { return '-x_' + i + j + '_' + a; };
+    let cnf = [];
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k= 1; k < d; k++) {
+                cnf.push([negx(i,j,k+1), x(i,j,k)]);
+            }
+        }
+    }//ここまで公理節
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k = 1; k <= d; k++) {
+                for (let r = i+1; r < n; r++) {
+                    if (k == 1) cnf.push([x(i,j,k),x(r,j,k)]);
+                    else if (k == d) cnf.push([negx(i,j,k-1),negx(r,j,k-1)]);
+                    else cnf.push([negx(i,j,k-1),x(i,j,k),negx(r,j,k-1),x(r,j,k)]);
+                }
+                for (let r = j+1; r < n; r++) {
+                    if (k == 1) cnf.push([x(i,j,k),x(i,r,k)]);
+                    else if (k == d) cnf.push([negx(i,j,k-1),negx(i,r,k-1)]);
+                    else cnf.push([negx(i,j,k-1),x(i,j,k),negx(i,r,k-1),x(i,r,k)]);
+                }
+            }
+        }
+    }//ここまで飛車
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k= 1; k <= d; k++) {
+                for (let r = i+1; r < n; r++) { 
+                    for(let c = 0; c < n; c++) {
+                        if (i+j == r+c) {//左下
+                            if (k == 1) cnf.push([x(i,j,k),x(r,c,k)]);
+                            else if (k == d) cnf.push([negx(i,j,k-1),negx(r,c,k-1)]);
+                            else cnf.push([negx(i,j,k-1),x(i,j,k),negx(r,c,k-1),x(r,c,k)]);
+                        }
+                        else if (j-i == c-r) {//右下
+                            if (k == 1) cnf.push([x(i,j,k),x(r,c,k)]);
+                            else if (k == d) cnf.push([negx(i,j,k-1),negx(r,c,k-1)]);
+                            else cnf.push([negx(i,j,k-1),x(i,j,k),negx(r,c,k-1),x(r,c,k)]);
+                        }
+                    }
+                }
+            }
+        }
+    }//ここまで角
+    return cnf;
+}
+
 function cnfWaerden(j, k, n) {
     let cnf = [];
     for (let d = 1; d <= n; d++) {
