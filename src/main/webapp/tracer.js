@@ -241,8 +241,11 @@ function selectCNF(sel) {
         case "Sudoku":
             cnf = cnfSudoku();
             break;
-        case "QueenGraph":
-            cnf = cnfQueenGraph(args[1], args[2]);
+        case "QueenGraphOrder":
+            cnf = cnfQueenGraphOrder(args[1], args[2]);
+            break;
+        case "QueenGraphDirect":
+            cnf = cnfQueenGraphDirect(args[1], args[2]);
             break;
     }
     document.getElementById("clauses").innerHTML =

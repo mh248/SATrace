@@ -21,7 +21,47 @@ function range(from, to, by) {
     return r;
 }
 
-function cnfQueenGraph(n,d) {
+function cnfQueenGraphDirect(n,d) {
+    function x(i,j,a) { return 'x_' + i + j + '_' + a; };
+    function negx(i,j,a) { return '-x_' + i + j + '_' + a; };
+    let cnf = [];
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            cnf.push(range(0,d,1).map(k => x(i,j,k)));
+        }
+    }//ここまで(15)式
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k= 0; k < d; k++) {
+                for (let r = i+1; r < n; r++) {
+                    cnf.push([negx(i,j,k),negx(r,j,k)]);
+                }
+                for (let r = j+1; r < n; r++) {
+                    cnf.push([negx(i,j,k),negx(i,r,k)]);
+                }
+            }
+        }
+    }//ここまで飛車
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k= 1; k <= d; k++) {
+                for (let r = i+1; r < n; r++) { 
+                    for(let c = 0; c < n; c++) {
+                        if (i+j == r+c) {//左下
+                            cnf.push([negx(i,j,k),negx(r,c,k)]);
+                        }
+                        else if (j-i == c-r) {//右下
+                            cnf.push([negx(i,j,k),negx(r,c,k)]);
+                        }
+                    }
+                }
+            }
+        }
+    }//ここまで角
+    return cnf;
+}
+
+function cnfQueenGraphOrder(n,d) {
     function x(i,j,a) { return 'x_' + i + j + '_' + a; };
     function negx(i,j,a) { return '-x_' + i + j + '_' + a; };
     let cnf = [];
