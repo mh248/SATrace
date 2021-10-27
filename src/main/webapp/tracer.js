@@ -56,7 +56,7 @@ function refresh() {
     }
     document.getElementById("prevButton").disabled = true;
     document.getElementById("nextButton").disabled = true;
-    if (! running && ! playing) {
+    if (!running && !playing) {
         if (tracePos > 0)
             document.getElementById("prevButton").disabled = false;
         if (tracePos < traceLength - 1)
@@ -77,7 +77,7 @@ function solve() {
     let outputNode = document.getElementById("output");
     outputNode.innerHTML = "Solving";
     let clauses = document.getElementById("clauses").value;
-    let params = { "c" : "solve", "clauses" : clauses };
+    let params = { "c": "solve", "clauses": clauses };
     postRequest("/api", params, function (http) {
         var result = http.responseText;
         if (result != "") {
@@ -104,7 +104,7 @@ function nextTrace() {
 }
 
 function playStopButton() {
-    playing = ! playing;
+    playing = !playing;
     refresh();
     if (playing)
         nextTrace();
@@ -112,7 +112,7 @@ function playStopButton() {
 
 function findNode(lit) {
     let node = d3.selectAll(".node").filter(
-        function (d,i) { return d3.select(this).select("title").text() == lit; }
+        function (d, i) { return d3.select(this).select("title").text() == lit; }
     );
     return node;
 }
@@ -128,7 +128,7 @@ function interactive() {
         d3.selectAll(".node").on("click", function () {
             let lit0 = d3.select(this).select("title").text();
             let selected = d3.select(this).select("ellipse").attr("fill") != "none";
-            if (! selected) {
+            if (!selected) {
                 setFill(lit0, "lightgray");
             } else {
                 setFill(lit0, "none");
@@ -160,7 +160,7 @@ function showTrace() {
     } else {
         running = true;
         refresh();
-        let params = { "c" : "getTrace", "i" : tracePos };
+        let params = { "c": "getTrace", "i": tracePos };
         postRequest("/api", params, function (http) {
             var result = http.responseText;
             running = false;
@@ -173,10 +173,10 @@ function showTrace() {
                     var learn = document.getElementById("learnt").innerHTML;
                     learn += "<br />";
                     learn += json.result.message;
-                    document.getElementById("learnt").innerHTML = learn;     
+                    document.getElementById("learnt").innerHTML = learn;
                     var le = json.result.message.replace(/'/g, "").replace("Learn ", "").split(" ");
-                    console.log(le);            
-                    for (var i=0; i<le.length; i++) {
+                    console.log(le);
+                    for (var i = 0; i < le.length; i++) {
                         setFill(negneg(le[i]), "red");
                         console.log(negneg(le[i]));
                     }
@@ -200,21 +200,30 @@ function selectCNF(sel) {
     let args = text.split(/ +/);
     let cnf = [];
     switch (args[0]) {
-    case "UNSAT":
-        cnf = cnfUNSAT(args[1]);
-        break;
-    case "Rivest":
-        cnf = [ [1,2,-3], [2,3,-4], [3,4,1], [4,-1,2], [-1,-2,3], [-2,-3,4], [-3,-4,-1], [-4,1,-2] ];
-        break;
-    case "Waerden":
-        cnf = cnfWaerden(args[1], args[2], args[3]);
-        break;
-    case "PigeonHole":
-        cnf = cnfPigeonHole(args[1]);
-        break;
-    case "Sudoku":
-        cnf = cnfSudoku();
-        break;
+        case "UNSAT":
+            cnf = cnfUNSAT(args[1]);
+            break;
+        case "Rivest":
+            cnf = [[1, 2, -3], [2, 3, -4], [3, 4, 1], [4, -1, 2], [-1, -2, 3], [-2, -3, 4], [-3, -4, -1], [-4, 1, -2]];
+            break;
+        case "Waerden":
+            cnf = cnfWaerden(args[1], args[2], args[3]);
+            break;
+        case "PigeonHole_SymBreak_Hole":
+            cnf = [[1, 2, -3], [2, 3, -4], [3, 4, 1], [4, -1, 2], [-1, -2, 3], [-2, -3, 4], [-3, -4, -1], [-4, 1, -2]];
+            break;
+        case "PigeonHole_SymBreak_Pigeon":
+            cnf = [[1, 2, -3], [2, 3, -4], [3, 4, 1], [4, -1, 2], [-1, -2, 3], [-2, -3, 4], [-3, -4, -1], [-4, 1, -2]];
+            break;
+        case "PigeonHole_SymBreak_Both":
+            cnf = [[1, 2, -3], [2, 3, -4], [3, 4, 1], [4, -1, 2], [-1, -2, 3], [-2, -3, 4], [-3, -4, -1], [-4, 1, -2]];
+            break;
+        case "PigeonHole":
+            cnf = cnfPigeonHole(args[1]);
+            break;
+        case "Sudoku":
+            cnf = cnfSudoku();
+            break;
     }
     document.getElementById("clauses").innerHTML =
         cnf.map(c => c.join(" ").trim()).join("\n");

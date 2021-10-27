@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,56 +13,60 @@
   <script type="text/javascript" src="tracer.js"></script>
   <script type="text/javascript" src="httprequest.js"></script>
 </head>
+
 <body>
-<h1>SATracer</h1>
+  <h1>SATracer</h1>
 
-<div id="trace">
+  <div id="trace">
 
-  <h2>Trace</h2>
+    <h2>Trace</h2>
 
-  <div>
-    <button id="prevButton" type="button" onclick="prevTrace()">&#9664; Prev</button>
-    <span id="status" style="padding: 0ex 2ex;"></span>
-    <button id="playStopButton" type="button" onclick="playStopButton()">Play/Stop</button>
-    <button id="nextButton" type="button" onclick="nextTrace()">Next &#9654;</button>
+    <div>
+      <button id="prevButton" type="button" onclick="prevTrace()">&#9664; Prev</button>
+      <span id="status" style="padding: 0ex 2ex;"></span>
+      <button id="playStopButton" type="button" onclick="playStopButton()">Play/Stop</button>
+      <button id="nextButton" type="button" onclick="nextTrace()">Next &#9654;</button>
+    </div>
+
+    <div id="message"></div>
+
+    <div id="graph"></div>
+
+    <div id="learnt"></div>
+
   </div>
 
-  <div id="message"></div>
+  <h2>CNF</h2>
 
-  <div id="graph"></div>
+  <div>
+    <pre id="output"></pre>
+  </div>
 
-  <div id="learnt"></div>
+  <div>
+    <select onchange="selectCNF(this);">
+      <option selected disabled>Select CNF</option>
+      <option>Rivest</option>
+      <option>UNSAT 4</option>
+      <option>UNSAT 5</option>
+      <option>UNSAT 6</option>
+      <option>Waerden 3 3 8</option>
+      <option>Waerden 3 3 9</option>
+      <option>Waerden 3 4 17</option>
+      <option>Waerden 3 4 18</option>
+      <option>PigeonHole 3</option>
+      <option>PigeonHole_SymBreak_Hole 3</option>
+      <option>PigeonHole_SymBreak_Pigeon 3</option>
+      <option>PigeonHole_SymBreak_Both 3</option>
+      <option>PigeonHole 4</option>
+      <option>PigeonHole 5</option>
+    </select>
+    <button id="solveButton" type="button" onclick="solve()">Solve</button>
+  </div>
 
-</div>
-
-<h2>CNF</h2>
-
-<div>
-  <pre id="output"></pre>
-</div>
-
-<div>
-  <select onchange="selectCNF(this);">
-    <option selected disabled>Select CNF</option>
-    <option>Rivest</option>
-    <option>UNSAT 4</option>
-    <option>UNSAT 5</option>
-    <option>UNSAT 6</option>
-    <option>Waerden 3 3 8</option>
-    <option>Waerden 3 3 9</option>
-    <option>Waerden 3 4 17</option>
-    <option>Waerden 3 4 18</option>
-    <option>PigeonHole 3</option>
-    <option>PigeonHole 4</option>
-    <option>PigeonHole 5</option>
-  </select>
-  <button id="solveButton" type="button" onclick="solve()">Solve</button>
-</div>
-
-<div>
-<textarea id="clauses" cols="30" rows="10">
+  <div>
+    <textarea id="clauses" cols="30" rows="10">
 </textarea>
-</div>
+  </div>
 
 
 </body>
