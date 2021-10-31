@@ -44,7 +44,7 @@ function cnfQueenGraphDirect(n,d) {
     }//ここまで飛車
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
-            for (let k= 1; k <= d; k++) {
+            for (let k= 0; k < d; k++) {
                 for (let r = i+1; r < n; r++) { 
                     for(let c = 0; c < n; c++) {
                         if (i+j == r+c) {//左下
@@ -58,6 +58,15 @@ function cnfQueenGraphDirect(n,d) {
             }
         }
     }//ここまで角
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let r = 0; r < d-1; r++) { 
+                for (let l = r+1; l < d; l++) { 
+                    cnf.push([negx(i,j,r),negx(i,j,l)]);
+                }
+            }
+        }
+    }
     return cnf;
 }
 
