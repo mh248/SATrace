@@ -12,6 +12,9 @@ let prevGraph = null;
 let graphviz;
 // animation wait (ms)
 let wait = 200;
+let seed = 12345678;
+let heuristics;
+let spec;
 
 window.onload = initUpload;
 
@@ -94,7 +97,9 @@ function solve() {
     let outputNode = document.getElementById("output");
     outputNode.innerHTML = "Solving";
     let clauses = document.getElementById("clauses").value;
-    let params = { "c": "solve", "clauses": clauses };
+    seed = document.getElementById("seed").value;
+    spec = document.getElementById("spec").value;
+    let params = { "c": "solve", "clauses": clauses, "seed": seed, "heuristics": heuristics, "spec": spec };
     postRequest("/api", params, function (http) {
         var result = http.responseText;
         if (result != "") {
@@ -210,6 +215,11 @@ function showTrace() {
     }
 }
 
+function selectOrder(sel) {
+    let i = sel.selectedIndex;
+    heuristics = sel.options[i].text;
+}
+
 function selectCNF(sel) {
     init();
     let i = sel.selectedIndex;
@@ -247,7 +257,11 @@ function selectCNF(sel) {
         case "QueenGraphDirect":
             cnf = cnfQueenGraphDirect(args[1], args[2]);
             break;
+        case "JSAI2010":
+            cnf = [['x1', 'x13'], ['-x1', '-x2', 'x14'], ['x3', 'x15'], ['x4', 'x16'], ['-x5', '-x3', 'x6'], ['-x5', '-x7'], ['-x6', 'x7', 'x8'], ['-x4', '-x8', '-x9'], ['-x1', 'x9', '-x10'], ['x9', 'x11', '-x14'], ['x10', '-x11', 'x12'], ['-x2', '-x11', '-x12']];
+            break;
     }
+
     document.getElementById("clauses").innerHTML =
         cnf.map(c => c.join(" ").trim()).join("\n");
 }

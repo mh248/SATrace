@@ -17,10 +17,10 @@ import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
 class MiniSat[D <: org.sat4j.minisat.core.DataStructureFactory](
-  learning: org.sat4j.minisat.core.LearningStrategy[D],
-  dsf: D,
-  order: org.sat4j.minisat.core.IOrder,
-  restart: org.sat4j.minisat.core.RestartStrategy
+    learning: org.sat4j.minisat.core.LearningStrategy[D],
+    dsf: D,
+    order: org.sat4j.minisat.core.IOrder,
+    restart: org.sat4j.minisat.core.RestartStrategy
 ) extends org.sat4j.minisat.core.Solver[D](learning, dsf, order, restart) {
   // Set of original constraints
   def getConstrs: org.sat4j.specs.IVec[Constr] = constrs
@@ -40,23 +40,34 @@ class MiniSat[D <: org.sat4j.minisat.core.DataStructureFactory](
 
 object MiniSat {
   import org.sat4j.minisat.constraints.{MixedDataStructureDanielWL => D}
-  def apply() = {
+  def apply(seed: Int, variableOrder: String, spec: Seq[Int]) = {
     val dsf = new D()
     val learning = new org.sat4j.minisat.learning.MiniSATLearning[D]()
-    val order = new org.sat4j.minisat.orders.VarOrderHeap()
+    val order = variableOrder match {
+      case "VSIDS"              => new org.sat4j.minisat.orders.VarOrderHeap()
+      case "VariableIndexOrder" => new OrderBasic()
+      case "RandomOrder"        => new OrderRandom(seed)
+      case "SpecificOrder"      => new OrderSpecific(spec)
+    }
     val restart = new org.sat4j.minisat.restarts.MiniSATRestarts()
     new MiniSat(learning, dsf, order, restart)
   }
 }
 
-class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[ISolverService] {
-  val sat4jSolver: ISolver = MiniSat()
+class Sat4j(
+    timeout: Int,
+    int2String: Map[Int, String],
+    seed: Int,
+    variableOrder: String,
+    spec: Seq[Int] = Seq.empty
+) extends SearchListener[ISolverService] {
+  val sat4jSolver: ISolver = MiniSat(seed, variableOrder, spec)
   val bcEncoder = new org.sat4j.tools.encoding.Sequential()
   var trace = new Trace(int2String)
 
   def convertInt(lit: Int): String = {
-      if (lit < 0) "-" + int2String(lit*(-1))
-      else int2String(lit)
+    if (lit < 0) "-" + int2String(lit * (-1))
+    else int2String(lit)
   }
 
   def convertClause(clause: IConstr): Seq[String] = {
@@ -91,7 +102,7 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
     else clause.toString.trim.replaceAll("\\[.\\]", "").split(" ").map(_.toInt)
   }
   def trailData(lit: Int, level: Int, reason: IConstr) = {
-    val learnt= if (reason == null) false else reason.learnt()
+    val learnt = if (reason == null) false else reason.learnt()
     TrailData(lit, level, toDimacs(reason), learnt)
 
   }
@@ -104,7 +115,11 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
         val trailLim = minisat.getTrailLim
         var i = 0
         for (level <- 0 to trailLim.size) {
-          while (i < trail.size && (level == trailLim.size || i < trailLim.get(level))) {
+          while (
+            i < trail.size && (level == trailLim.size || i < trailLim.get(
+              level
+            ))
+          ) {
             val p: Int = trail.get(i)
             val reason: Constr = minisat.getReason(p)
             tr :+= trailData(toDimacs(p), level, reason)
@@ -233,7 +248,7 @@ class Sat4j(timeout: Int, int2String: Map[Int, String]) extends SearchListener[I
     log("cleaning")
   }
 
-  def solve(assumptions: Seq[Int] = Seq.empty): (String,BitSet) = {
+  def solve(assumptions: Seq[Int] = Seq.empty): (String, BitSet) = {
     sat4jSolver.setSearchListener(this);
     var set = BitSet.empty
     try {

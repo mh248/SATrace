@@ -43,7 +43,7 @@
   </div>
 
   <div>
-    <select onchange="selectCNF(this);">
+    CNF: <select onchange="selectCNF(this);">
       <option selected disabled>Select CNF</option>
       <option>Rivest</option>
       <option>UNSAT 4</option>
@@ -53,10 +53,11 @@
       <option>Waerden 3 3 9</option>
       <option>Waerden 3 4 17</option>
       <option>Waerden 3 4 18</option>
+      <option>JSAI2010</option>
       <option>PigeonHole 3</option>
       <option>PigeonHole_SymBreak_Hole 3</option>
       <option>PigeonHole_SymBreak_Pigeon 3</option>
-      <option>PigeonHole_SymBreak_Both 3</option>
+      <!-- <option>PigeonHole_SymBreak_Both 3</option>-->
       <option>PigeonHole 4</option>
       <option>PigeonHole 5</option>
       <option>QueenGraphOrder 2 2</option>
@@ -71,10 +72,26 @@
       <option>QueenGraphDirect 3 3</option>
       <option>QueenGraphDirect 4 4</option>
     </select>
+    or <input id='inputFile' type='file'>
+  </div>
+  <div>
+    Variable Order:
+    <select onchange="selectOrder(this);">
+      <option selected disabled>Select Variable Order</option>
+      <option>VSIDS</option>
+      <option>VariableIndexOrder</option>
+      <option>RandomOrder</option>
+      <option>SpecificOrder</option>
+    </select>
+    <br>
+    Seed for RandomOrder: <textarea id="seed" cols="8" rows="1">12345678</textarea><br>
+    SpecificOrder:
+    <textarea id="spec" cols="16"
+      rows="1">seq. of lits e.g. x1 -x1 x2 -x2 x3 -x3 x4 -x4 x5 -x5 x6 -x6 x7 -x7 x8 -x8 x9 -x9 x10 -x10 x11 -x11 x12 -x12 x13 -x13</textarea><br>
+
     <button id="solveButton" type="button" onclick="solve()">Solve</button>
   </div>
-  <p>or upload your own file.</p>
-  <input id='inputFile' type='file'>
+
   <div>
     <textarea id="clauses" cols="30" rows="10">
 </textarea>
