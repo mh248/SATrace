@@ -1,7 +1,6 @@
 package web
 
 import org.sat4j.minisat.orders.VarOrderHeap
-import javax.jws.soap.SOAPBinding.Style
 
 class OrderRandom(seed: Int) extends VarOrderHeap {
 
