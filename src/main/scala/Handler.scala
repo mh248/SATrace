@@ -71,7 +71,7 @@ class Handler {
             }
             int2String = int2String.updated(0, "conflict")
 
-            val specificOrder = for {
+            val specificOrder = if (heuristics == "SpecificOrder") for {
               symbolLit <- spec
               sign = symbolLit.startsWith("-")
               symbolVar = symbolLit.replaceFirst("-", "")
@@ -81,6 +81,8 @@ class Handler {
                   -1 * x
                 else x
             } yield intLit
+            else
+              Seq.empty
 
             println(s"*** specInt ${specificOrder.mkString(",")}")
 
