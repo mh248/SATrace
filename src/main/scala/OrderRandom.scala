@@ -17,10 +17,10 @@ class OrderRandom(seed: Int) extends VarOrderHeap {
     if (unassigned.isEmpty)
       return super.select()
     else {
-      val shuffled = rand.shuffle(unassigned)
+      rand.nextInt(unassigned.size)
       val randPosition = rand.nextInt(unassigned.size)
       println(
-        s"*** RandomPosition $randPosition from ${shuffled.mkString(",")} ***"
+        s"*** RandomPosition $randPosition from ${unassigned.mkString(",")} ***"
       )
       return unassigned(randPosition)
     }
